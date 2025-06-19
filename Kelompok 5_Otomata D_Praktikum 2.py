@@ -41,7 +41,7 @@ def validate_input(input_string):
     if not input_string or input_string.isspace():
         return False, "input jangan kosong dan space only!"
     
-    for i, char in enumerate(input_string):
+    for i, char in enumerate(input_string) :
         if not is_valid_char(char):
             return False, f"char'{char}' pada  {i+1} tidak valid! hanya huruf dan angka."
     
@@ -96,6 +96,12 @@ def is_palindrome_with_visualization(input_string):
         right -= 1
         step += 1
         print()
+    else: # jumlah karakter ganjil
+        if length % 2 == 1:
+            print(f"Step {step}: Karakter tengah '{input_string[left]}' tidak perlu dibandingkan")
+        print("---------------------------------------------------------------")
+    print(f"✅ Semua karakter cocok! String '{input_string}' adalah palindrome.")
+    print("---------------------------------------------------------------")
     
     print("PALINDROME!")
     return True
